@@ -6,9 +6,7 @@
   <title>Porra Mundial 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    /* ── TOKENS ── */
     :root {
-      --negro:    #0d0d0d;
       --azul:     #0a1628;
       --azul-mid: #122040;
       --oro:      #c9a84c;
@@ -17,226 +15,50 @@
       --bronce:   #a0673a;
       --blanco:   #f5f5f0;
       --gris:     #8a8a8a;
-      --verde:    #2ecc71;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background-color: var(--azul);
-      color: var(--blanco);
-      font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-      padding-bottom: 3rem;
-    }
-
-    /* ── HEADER ── */
-    header {
-      background: linear-gradient(160deg, #0a1628 60%, #1a3060);
-      padding: 2.5rem 1.5rem 2rem;
-      text-align: center;
-      border-bottom: 2px solid var(--oro);
-      position: relative;
-    }
-
-    .titulo-torneo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.2rem, 7vw, 4.5rem);
-      letter-spacing: 0.06em;
-      color: var(--oro-claro);
-      line-height: 1;
-    }
-
-    .subtitulo {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      color: var(--plata);
-      text-transform: uppercase;
-      margin-top: 0.4rem;
-    }
-
-    /* ── ÚLTIMO PARTIDO ── */
-    .ultimo-partido {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      margin: 1.5rem auto 0;
-      max-width: 600px;
-      background: var(--azul-mid);
-      border: 1px solid var(--oro);
-      border-radius: 6px;
-      padding: 0.6rem 1.2rem;
-      font-size: 0.82rem;
-    }
-
-    .ultimo-partido .etiqueta {
-      color: var(--oro);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-    }
-
-    .ultimo-partido .valor {
-      color: var(--blanco);
-      font-weight: 400;
-    }
-
-    /* ── ACTUALIZACIÓN ── */
-    .info-refresh {
-      text-align: center;
-      font-size: 0.72rem;
-      color: var(--gris);
-      margin-top: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    #countdown {
-      color: var(--oro);
-      font-weight: 600;
-    }
-
-    /* ── CONTENEDOR TABLA ── */
-    .contenedor {
-      max-width: 700px;
-      margin: 2rem auto 0;
-      padding: 0 1rem;
-    }
-
-    /* ── TABLA ── */
-    .tabla-ranking {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .tabla-ranking thead tr {
-      background: var(--azul-mid);
-      border-bottom: 2px solid var(--oro);
-    }
-
-    .tabla-ranking thead th {
-      padding: 0.75rem 1rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--plata);
-      text-align: left;
-    }
-
-    .tabla-ranking thead th.num {
-      text-align: center;
-      width: 48px;
-    }
-
-    .tabla-ranking thead th.pts {
-      text-align: right;
-    }
-
-    .tabla-ranking tbody tr {
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: background 0.15s;
-    }
-
-    .tabla-ranking tbody tr:hover {
-      background: rgba(201, 168, 76, 0.06);
-    }
-
-    .tabla-ranking tbody td {
-      padding: 0.85rem 1rem;
-      font-size: 0.9rem;
-    }
-
-    .tabla-ranking tbody td.num {
-      text-align: center;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.15rem;
-      width: 48px;
-    }
-
-    .tabla-ranking tbody td.pts {
-      text-align: right;
-      font-weight: 600;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .tabla-ranking tbody td.pts-total {
-      text-align: right;
-      font-weight: 700;
-      font-size: 1rem;
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* ── MEDALLAS ── */
+    body { background-color: var(--azul); color: var(--blanco); font-family: 'Inter', sans-serif; min-height: 100vh; padding-bottom: 3rem; }
+    header { background: linear-gradient(160deg, #0a1628 60%, #1a3060); padding: 2.5rem 1.5rem 2rem; text-align: center; border-bottom: 2px solid var(--oro); }
+    .titulo-torneo { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 7vw, 4.5rem); letter-spacing: 0.06em; color: var(--oro-claro); line-height: 1; }
+    .subtitulo { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; color: var(--plata); text-transform: uppercase; margin-top: 0.4rem; }
+    .ultimo-partido { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin: 1.5rem auto 0; max-width: 600px; background: var(--azul-mid); border: 1px solid var(--oro); border-radius: 6px; padding: 0.6rem 1.2rem; font-size: 0.82rem; }
+    .ultimo-partido .etiqueta { color: var(--oro); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
+    .ultimo-partido .valor { color: var(--blanco); font-weight: 400; }
+    .info-refresh { text-align: center; font-size: 0.72rem; color: var(--gris); margin-top: 0.5rem; letter-spacing: 0.05em; }
+    #countdown { color: var(--oro); font-weight: 600; }
+    .contenedor { max-width: 700px; margin: 2rem auto 0; padding: 0 1rem; }
+    .tabla-ranking { width: 100%; border-collapse: collapse; }
+    .tabla-ranking thead tr { background: var(--azul-mid); border-bottom: 2px solid var(--oro); }
+    .tabla-ranking thead th { padding: 0.75rem 1rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--plata); text-align: left; }
+    .tabla-ranking thead th.num { text-align: center; width: 48px; }
+    .tabla-ranking thead th.pts { text-align: right; }
+    .tabla-ranking tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.15s; }
+    .tabla-ranking tbody tr:hover { background: rgba(201, 168, 76, 0.06); }
+    .tabla-ranking tbody td { padding: 0.85rem 1rem; font-size: 0.9rem; }
+    .tabla-ranking tbody td.num { text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; width: 48px; }
+    .tabla-ranking tbody td.pts { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .tabla-ranking tbody td.pts-total { text-align: right; font-weight: 700; font-size: 1rem; font-variant-numeric: tabular-nums; }
     tr.pos-1 { background: rgba(201, 168, 76, 0.12); }
     tr.pos-1 td.num { color: var(--oro-claro); }
     tr.pos-1 td.pts-total { color: var(--oro-claro); }
-
     tr.pos-2 { background: rgba(176, 184, 193, 0.08); }
     tr.pos-2 td.num { color: var(--plata); }
     tr.pos-2 td.pts-total { color: var(--plata); }
-
     tr.pos-3 { background: rgba(160, 103, 58, 0.10); }
     tr.pos-3 td.num { color: #c88a5a; }
     tr.pos-3 td.pts-total { color: #c88a5a; }
-
-    /* ── MEDALLA ICONO ── */
-    .medalla {
-      display: inline-block;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      line-height: 22px;
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-align: center;
-      margin-right: 2px;
-    }
-    .medalla-oro    { background: var(--oro); color: #000; }
-    .medalla-plata  { background: var(--plata); color: #000; }
+    .medalla { display: inline-block; width: 22px; height: 22px; border-radius: 50%; line-height: 22px; font-size: 0.65rem; font-weight: 700; text-align: center; margin-right: 2px; }
+    .medalla-oro { background: var(--oro); color: #000; }
+    .medalla-plata { background: var(--plata); color: #000; }
     .medalla-bronce { background: var(--bronce); color: #fff; }
-
-    /* ── ESTADO CARGA ── */
-    #estado {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: var(--gris);
-      font-size: 0.9rem;
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 28px;
-      height: 28px;
-      border: 3px solid rgba(201,168,76,0.2);
-      border-top-color: var(--oro);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin-bottom: 1rem;
-    }
-
+    #estado { text-align: center; padding: 3rem 1rem; color: var(--gris); font-size: 0.9rem; }
+    .spinner { display: inline-block; width: 28px; height: 28px; border: 3px solid rgba(201,168,76,0.2); border-top-color: var(--oro); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 1rem; }
     @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 500px) {
-      .tabla-ranking thead th.col-previos,
-      .tabla-ranking tbody td.col-previos,
-      .tabla-ranking thead th.col-mundial,
-      .tabla-ranking tbody td.col-mundial {
-        display: none;
-      }
+      .tabla-ranking thead th.col-previos, .tabla-ranking tbody td.col-previos,
+      .tabla-ranking thead th.col-mundial, .tabla-ranking tbody td.col-mundial { display: none; }
     }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.68rem;
-      color: var(--gris);
-      letter-spacing: 0.05em;
-    }
+    footer { text-align: center; margin-top: 3rem; font-size: 0.68rem; color: var(--gris); letter-spacing: 0.05em; }
   </style>
 </head>
 <body>
@@ -244,20 +66,15 @@
 <header>
   <div class="titulo-torneo">Porra Mundial 2026</div>
   <div class="subtitulo">Clasificación en tiempo real</div>
-  <div class="ultimo-partido" id="ultimo-partido">
+  <div class="ultimo-partido">
     <span class="etiqueta">Último partido:</span>
     <span class="valor" id="ultimo-valor">Cargando...</span>
   </div>
-  <div class="info-refresh">
-    Actualización automática en <span id="countdown">120</span>s
-  </div>
+  <div class="info-refresh">Actualización automática en <span id="countdown">120</span>s</div>
 </header>
 
 <div class="contenedor">
-  <div id="estado">
-    <div class="spinner"></div>
-    <div>Cargando clasificación...</div>
-  </div>
+  <div id="estado"><div class="spinner"></div><div>Cargando clasificación...</div></div>
   <table class="tabla-ranking" id="tabla" style="display:none;">
     <thead>
       <tr>
@@ -272,26 +89,19 @@
   </table>
 </div>
 
-<footer>
-  Copa Mundial de la FIFA 2026 · Datos actualizados desde Google Sheets
-</footer>
+<footer>Copa Mundial de la FIFA 2026 · Datos actualizados desde Google Sheets</footer>
 
 <script>
-  // ── CONFIGURACIÓN ──────────────────────────────────────────
-  // Sustituye SHEET_ID por el ID de tu Google Sheets
-  // (es la cadena larga entre /d/ y /edit en la URL)
-  var SHEET_ID = "PON_AQUI_TU_SHEET_ID";
+  var SHEET_ID = "12CFjOvJuiVViSOwty_b2MdOaYI7EJAkXzsSYq5zWb_s";
   var SHEET_NAME = "RANKING";
-  var INTERVALO = 120; // segundos entre actualizaciones
+  var INTERVALO = 120;
 
-  // ── URL CSV ────────────────────────────────────────────────
   function csvUrl() {
     return "https://docs.google.com/spreadsheets/d/" + SHEET_ID +
            "/gviz/tq?tqx=out:csv&sheet=" + encodeURIComponent(SHEET_NAME) +
            "&cachebust=" + Date.now();
   }
 
-  // ── PARSEAR CSV ────────────────────────────────────────────
   function parsearCSV(texto) {
     return texto.trim().split("\n").map(function(linea) {
       var resultado = [];
@@ -299,54 +109,54 @@
       var campo = "";
       for (var i = 0; i < linea.length; i++) {
         var c = linea[i];
-        if (c === '"') {
-          dentro = !dentro;
-        } else if (c === "," && !dentro) {
-          resultado.push(campo.trim());
-          campo = "";
-        } else {
-          campo += c;
-        }
+        if (c === '"') { dentro = !dentro; }
+        else if (c === "," && !dentro) { resultado.push(campo.trim()); campo = ""; }
+        else { campo += c; }
       }
       resultado.push(campo.trim());
       return resultado;
     });
   }
 
-  // ── CARGAR DATOS ───────────────────────────────────────────
   function cargarDatos() {
     fetch(csvUrl())
       .then(function(r) { return r.text(); })
       .then(function(texto) {
         var filas = parsearCSV(texto);
 
-        // Fila 1 (índice 0): último partido recalculado
+        // Fila 0: ["Ultimo partido recalculado:", "Sudafrica vs Canada — 1-0", "", "", ""]
+        // Fila 1: fila vacía (fila 2 de la hoja)
+        // Fila 2: cabeceras ["Pos", "Participante", ...]
+        // Fila 3+: datos
+
         var ultimoVal = "";
         if (filas[0] && filas[0][1]) {
-          ultimoVal = filas[0][1];
+          ultimoVal = filas[0][1].replace(/^"|"$/g, "").trim();
         }
         document.getElementById("ultimo-valor").textContent =
-          ultimoVal && ultimoVal !== "—" ? ultimoVal : "Pendiente";
+          ultimoVal && ultimoVal !== "—" && ultimoVal !== "" ? ultimoVal : "Pendiente";
 
-        // Fila 3 (índice 2): cabecera de tabla → la saltamos
-        // Filas 4+ (índice 3+): datos de participantes
-        var datos = filas.slice(3).filter(function(f) {
-          return f[0] && f[0] !== "";
-        });
+        // Buscar primera fila con número en col 0 (datos reales)
+        var datos = [];
+        for (var i = 0; i < filas.length; i++) {
+          var f = filas[i];
+          if (f[0] && !isNaN(Number(f[0])) && f[1] && f[1].trim() !== "") {
+            datos.push(f);
+          }
+        }
 
         var cuerpo = document.getElementById("cuerpo");
         cuerpo.innerHTML = "";
 
         datos.forEach(function(fila, idx) {
-          var pos      = fila[0] || (idx + 1);
-          var nombre   = fila[1] || "";
-          var previos  = fila[2] || "0";
-          var mundial  = fila[3] || "0";
-          var total    = fila[4] || "0";
+          var pos     = fila[0] || (idx + 1);
+          var nombre  = fila[1] || "";
+          var previos = fila[2] || "0";
+          var mundial = fila[3] || "0";
+          var total   = fila[4] || "0";
 
           var tr = document.createElement("tr");
-          var clasePos = idx < 3 ? "pos-" + (idx + 1) : "";
-          if (clasePos) tr.className = clasePos;
+          if (idx < 3) tr.className = "pos-" + (idx + 1);
 
           var iconoPos = "";
           if (idx === 0) iconoPos = '<span class="medalla medalla-oro">' + pos + '</span>';
@@ -368,28 +178,19 @@
         document.getElementById("tabla").style.display = "table";
       })
       .catch(function(err) {
-        document.getElementById("estado").innerHTML =
-          "<div>⚠️ Error al cargar los datos. Reintentando...</div>";
+        document.getElementById("estado").innerHTML = "<div>⚠️ Error al cargar los datos. Reintentando...</div>";
         console.error(err);
       });
   }
 
-  // ── CUENTA ATRÁS ───────────────────────────────────────────
   var segundos = INTERVALO;
-  var el = document.getElementById("countdown");
-
   setInterval(function() {
     segundos--;
-    if (segundos <= 0) {
-      segundos = INTERVALO;
-      cargarDatos();
-    }
-    el.textContent = segundos;
+    if (segundos <= 0) { segundos = INTERVALO; cargarDatos(); }
+    document.getElementById("countdown").textContent = segundos;
   }, 1000);
 
-  // ── CARGA INICIAL ──────────────────────────────────────────
   cargarDatos();
 </script>
-
 </body>
 </html>
